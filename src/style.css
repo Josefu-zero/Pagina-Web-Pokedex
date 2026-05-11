@@ -367,25 +367,33 @@ code {
 
 /* Modal */
 .modal {
-  display: none;
+  display: none; /* Se activará como 'flex' desde JavaScript */
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
+  
+  /* Nuevas propiedades para centrado total */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
 }
 
 .modal-content {
   background-color: var(--bg);
-  margin: 10% auto;
+  /* Elimina o comenta el 'margin: 10% auto;' */
   padding: 20px;
   border-radius: 15px;
-  width: 80%;
-  max-width: 400px;
+  width: 90%; /* Ajustado para mejor respuesta en móviles */
+  max-width: 450px;
   position: relative;
   text-align: center;
+  
+  /* Evita que el contenido se corte si la pantalla es muy pequeña */
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .close-button {

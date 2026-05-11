@@ -67,6 +67,7 @@ function createCard(pokemon) {
 async function showDetail(pokemon) {
   const modal = document.getElementById('pokemon-modal');
   const modalBody = document.getElementById('modal-body');
+  
 
   // Obtener la descripción en español desde la API
   const speciesRes = await fetch(pokemon.species.url);
@@ -103,7 +104,7 @@ async function showDetail(pokemon) {
     audio.play();
   };
 
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
 }
 
 // Cerrar modal
