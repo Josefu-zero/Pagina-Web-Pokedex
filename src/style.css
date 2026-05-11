@@ -516,3 +516,42 @@ code {
   font-size: 0.75rem;
   border-radius: 12px;
 }
+
+header {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+footer {
+  width: 100%;
+  padding: 30px 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.footer-content a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/* Ajuste opcional para que el footer no quede pegado al botón de cargar más */
+.load-more-container {
+  padding-bottom: 20px;
+}
