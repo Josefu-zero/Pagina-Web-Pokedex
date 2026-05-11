@@ -294,3 +294,138 @@ code {
     border-right-color: var(--border);
   }
 }
+
+
+/* Mi Stylo */
+/* Estilos para la Cuadrícula */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de Pokemon */
+.pokemon-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+}
+
+.pokemon-number {
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  display: block;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: var(--text-h);
+  margin-top: 5px;
+}
+
+/* Loader (Spinner tipo Pokeball) */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.pokeball-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--text);
+  border-radius: 50%;
+  border-top-color: #ff1c1c; /* Rojo Pokemon */
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: var(--bg);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+/* Buscador y Filtro */
+.controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+#search-input, #gen-filter {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-family: var(--sans);
+}
+
+#search-input { width: 300px; }
+
+.load-more-container {
+  text-align: center;
+  padding: 40px;
+}
+
+#load-more {
+  padding: 12px 24px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}

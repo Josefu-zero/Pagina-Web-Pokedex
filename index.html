@@ -1,69 +1,51 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>js-node</title>
-    <p> Lab. Lista de Pokemon xd </p>
+    <title>Pokedex Nacional</title>
   </head>
   <body>
-    <input type="text" id="text">
-      <div id="caja"
-      style="
-        width:300px;
-        height:300px;
-        background:red;
-        ">
+    <header>
+      <h1>Pokedex Nacional</h1>
+    </header>
+
+    <section class="controls">
+    <input type="text" id="search-input" placeholder="Buscar por nombre o ID...">
+    
+    <select id="gen-filter">
+      <option value="all">Todas las Generaciones</option>
+      <option value="1">G1 (Kanto)</option>
+      <option value="2">G2 (Johto)</option>
+      <option value="3">G3 (Hoenn)</option>
+      <option value="4">G4 (Sinnoh)</option>
+      <option value="5">G5 (Unova)</option>
+      <option value="6">G6 (Kalos)</option>
+      <option value="7">G7 (Alola)</option>
+      <option value="8">G8 (Galar)</option>
+      <option value="9">G9 (Paldea)</option>
+    </select>
+  </section>
+
+  <main id="pokemon-grid" class="grid-container"></main>
+
+  <div class="load-more-container">
+    <button id="load-more">Cargar más Pokémon</button>
+  </div>
+
+
+
+
+    <main id="pokemon-grid" class="grid-container"></main>
+
+    <div id="pokemon-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-body"></div>
       </div>
-      <button id="color">Cambiar color</button>
+    </div>
 
-
-      <button id="cargar">Cargar Pokemon</button>
-      <ul id="pokemon-list"></ul>
-
-
-
-    <script>
-      //detectar teclas
-      document.getElementById("text")
-              .addEventListener("keydown", function(event){
-                console.log("tecla:", event.key);
-                });
-      // coordenadas del mouse
-      document.getElementById("caja")
-              .addEventListener("mousemove", function(event){
-                console.log(event.clientX);
-                console.log(event.clientY);
-              });
-      // cambiar color de caja con css
-      document.getElementById("color")
-              .addEventListener("click", function() {
-              let caja = document.getElementById("caja");
-              caja.style.background = "blue";
-              caja.style.color = "white";
-              caja.style.padding = "20px";
-      });
-      // cargar pokemon de api con fetch
-      document.getElementById("cargar")
-              .addEventListener("click", function() {
-                fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
-                  .then(response => response.json())
-                  .then(data => {
-                    let pokemonList = document.getElementById("pokemon-list");
-                    pokemonList.innerHTML = "";
-                    data.results.forEach(pokemon => {
-                      let li = document.createElement("li");
-                          li.textContent = pokemon.name;
-                          pokemonList.appendChild(li);
-                    });
-                  });
-              });
-
-
-
-    </script>
-    <!-- div id="app"></div>
-    <script type="module" src="/src/main.js"></script> -->
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
